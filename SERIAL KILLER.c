@@ -10,8 +10,11 @@ void UART_TX(char * tx_data);          			// Function Prototype for TX
 void main(void)
 {
 	WDTCTL = WDTPW + WDTHOLD;					//Stop WDT
-	BCSCTL1 = CALBC1_1MHZ;						//Set DCO to 1MHz
-	DCOCTL = CALDCO_1MHZ;
+//	BCSCTL1 = CALBC1_1MHZ;						//Set DCO to 1MHz
+//	DCOCTL = CALDCO_1MHZ;
+	BCSCTL1 = CALBC1_12MHZ;						//Set DCO to 1MHz
+	DCOCTL = CALDCO_12MHZ;
+
 
 	P1DIR |= (BIT0 | BIT6);						//Set P1.0 and P1.6 to outputs
 	P1OUT &= ~(BIT0+BIT3+BIT4+BIT5+BIT6+BIT7);	//Turn all outputs off
@@ -26,8 +29,11 @@ void main(void)
 
 	//UART setup
 	UCA0CTL1 |= UCSSEL_2;						//SMCLK
-	UCA0BR0 = 109;								//9600bps	//1040000Hz/9600
-	UCA0BR1 = 0;								//9600bps
+//	UCA0BR0 = 109;								//9600bps	//1040000Hz/9600
+//	UCA0BR1 = 0;								//9600bps
+    UCA0BR0 = 113;
+    UCA0BR1 = 2;
+
 	UCA0MCTL = UCBRS_1;							//Modulation
 	UCA0CTL1 &= ~UCSWRST;						//Start USCI
 	IE2 |= UCA0RXIE;							//Enable RX interrupt
@@ -35,17 +41,17 @@ void main(void)
 
 	//P2.6 PWM setup
     TA0CTL = TASSEL_2 + MC_1;                  	// SMCLK, upmode
-    TA0CCTL1 = OUTMOD_3;                        // TA0CCTL1 - blue PWM set/reset FOR RGB LED
-    //TA0CCTL1 = OUTMOD_7;                      // TA0CCTL1 - blue PWM reset/set FOR RGB STRIP
+    //TA0CCTL1 = OUTMOD_3;                      // TA0CCTL1 - blue PWM set/reset FOR RGB LED
+    TA0CCTL1 = OUTMOD_7;                      	// TA0CCTL1 - blue PWM reset/set FOR RGB STRIP
     TA0CCR0 = 255;                             	// PWM Period
 
     //P2.2 + P2.4 PWM setup
     TA1CTL = TASSEL_2 + MC_1;        	        // SMCLK, upmode
-    TA1CCTL1 = OUTMOD_3;                        // TA1CCTL1 - red PWM set/reset FOR RGB LED
-    //TA1CCTL1 = OUTMOD_7;    	                // TA1CCTL1 - red PWM reset/set FOR STRIP
+    //TA1CCTL1 = OUTMOD_3;                      // TA1CCTL1 - red PWM set/reset FOR RGB LED
+    TA1CCTL1 = OUTMOD_7;    	                // TA1CCTL1 - red PWM reset/set FOR STRIP
 
-    TA1CCTL2 = OUTMOD_3;                        // TA1CCTL2 - green PWM set/reset FOR RGB LED
-    //TA1CCTL2 = OUTMOD_7;						// TA1CCTL2 - green PWM reset/set FOR STRIP
+    //TA1CCTL2 = OUTMOD_3;                      // TA1CCTL2 - green PWM set/reset FOR RGB LED
+    TA1CCTL2 = OUTMOD_7;						// TA1CCTL2 - green PWM reset/set FOR STRIP
     TA1CCR0 = 255;          	                // PWM Period
 
 }
