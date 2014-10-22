@@ -7,7 +7,8 @@ This is the MSP430 C code for the Serial Killer (TI CCS5 project)
 This is a simple parser for the MSP430. 
 The MSP430 receives commands through the UART, parses them, and sets the PWM values for the RGB led/strip or whatever. 
 
-At first this was meant to be a room mood lighting - led strip..thing. Then I dropped that for no reason and decided to install it in my pc case. That's why you see all of these options.
+At first this was meant to be a room mood lighting - led strip..thing. 
+Then I dropped that for no reason and decided to install it in my pc case.
 
 I'll update this and link some gerbers when I finish designing the pcb.
 
