@@ -14,7 +14,8 @@ I'll update this and link some gerbers when I finish designing the pcb.
 
 Here is the link for the GUI project: https://github.com/espilioto/SERIAL-KILLER-beta
 
-Many thanks to the 43oh forum for the help (even though I didn't even start a new thread) :P It's a very nice place if you're into this stuff.
+Many thanks to the 43oh forum for the help (even though I didn't even start a new thread) :P 
+It's a very nice place even if you're not into this stuff :D
 Threads that helped me develop this: 
 
 http://forum.43oh.com/topic/253-pwm-codes-and-timera/ PWM stuff 
