@@ -10,10 +10,9 @@ The MSP430 receives commands through the UART, parses them, and sets the PWM val
 At first this was meant to be a room mood lighting - led strip..thing. 
 Then I dropped that for no reason and decided to install it in my pc case.
 
-I'll update this and link some gerbers when I finish designing the pcb.
+I'll update this and link some gerbers when I finish designing the pcb.[PCB \o/]
 
-Here is the link for the GUI project
-- https://github.com/espilioto/SerialKiller3000
+[GUI project link]
 
 Many thanks to the 43oh forum for the help (even though I didn't even start a new thread) :P 
 It's a very nice place even if you're not into this stuff :D
@@ -33,3 +32,6 @@ This project was the one that actually gave me the idea, and made me look into s
 tl;dr: A UART led blinker for the MSP430
 
 ***SouLSLayeR***
+
+[GUI project link]:https://github.com/espilioto/SerialKiller3000
+[PCB \o/]:https://github.com/espilioto/SerialKiller3000PCB
