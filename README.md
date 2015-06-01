@@ -10,7 +10,7 @@ The MSP430 receives commands through the UART, parses them, and sets the PWM val
 At first this was meant to be a room mood lighting - led strip..thing. 
 Then I dropped that for no reason and decided to install it in my pc case.
 
-I'll update this and link some gerbers when I finish designing the pcb.[PCB \o/]
+I'll update this and link some gerbers when I finish designing the pcb. [PCB \o/]
 
 [GUI project link]
 
